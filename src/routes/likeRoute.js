@@ -3,9 +3,15 @@ import { getUserLike, likeRes, likeUser } from "../controllers/likeResController
 
 
 const likeRoute = express.Router()
+
+//xử lý like/ unlike
 likeRoute.get("/user", getUserLike)
+
+//lấy danh sách người like theo nhà hàng (dùng params )
 likeRoute.get("/like-res/:res_id", likeRes)
-likeRoute.get("/like-res", likeUser)
+
+//lấy danh sách nhà hàng đã like theo user 
+likeRoute.get("/like-user", likeUser)
 
 
 

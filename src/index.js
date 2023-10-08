@@ -5,7 +5,7 @@ import rootRouter from './routes/rootRouter.js';
 const app =express()
 app.use(express.json())
 app.use(cors())
-app.listen(8020)
+app.listen(8030)
 
 
 app.use(rootRouter) 

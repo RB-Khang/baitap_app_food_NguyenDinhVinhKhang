@@ -4,7 +4,7 @@ let model = initModels(sequelize)
 
 
 
-//xử lý like/ unlike 
+//xử lý like/ unlike : nếu có bản ghi người dùng và nhà hàng thì là đã like -> unlike, nếu chưa có thì tạo mới -> đã like
 const getUserLike = async (req, res) => {
     const { user_id, res_id } = req.body
     let check = await model.like_res.findOne(
@@ -44,9 +44,9 @@ const likeRes = async (req, res) => {
     res.send(likedRes)
 }
 
-//lấy danh sách nhà hàng đã like theo user (dùng params) 
-const likeUser = async (request, res) => {
-    const user_id = request.query.user_id
+//lấy danh sách nhà hàng đã like theo user 
+const likeUser = async (req, res) => {
+    const user_id = req.query.user_id
     const likedRes = await model.like_res.findAll({
         where: {
             user_id
