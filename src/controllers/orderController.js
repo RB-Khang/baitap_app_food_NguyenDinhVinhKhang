@@ -22,8 +22,6 @@ const model = initModels(sequelize)
 }
  */
 
-
-
 const addOrder = async (req, res) => {
     const { user_id, order, code } = req.body
     
